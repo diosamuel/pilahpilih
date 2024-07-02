@@ -3,9 +3,12 @@ import { Button, ButtonGroup } from '@nextui-org/button';
 import forest from '../assets/forest.png';
 import bottle from '../assets/bottle.png';
 import { IconRecycle, IconInfoSquareRounded } from '@tabler/icons-react';
-function InfoBarang({ className }) {
+function InfoBarang({ className,jenis }) {
   const [count, setCount] = useState(0);
 
+  let barang = [{
+    class:"PLASTIC"
+  }]
   return (
     <div
       className={`flex flex-col justify-center items-center gap-5 rounded-t-2xl bg-white p-5 border ${className}`}
