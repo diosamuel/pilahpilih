@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './App'
 import Barang from './Barang'
 import Deteksi from './Deteksi'
+import Canvas from './Canvas'
 import './index.css'
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="barang" element={<Barang />} />
         <Route path="deteksi" element={<Deteksi />} />
+        <Route path="canvas" element={<Canvas />} />
       </Routes>
     </BrowserRouter>
   );

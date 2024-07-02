@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import detectImage from '../api/fetch.js';
 import InfoBarang from './InfoBarang';
+import { IconCapture, IconRefresh, IconZoomScan } from '@tabler/icons-react';
 import 'animate.css';
 const CameraApp = ({ className }) => {
   const videoRef = useRef(null);
@@ -85,6 +86,7 @@ const CameraApp = ({ className }) => {
     let { status, data } = await detectImage(canvasB64);
     if (status == 200) {
       setResult(data);
+      console.log(data)
     }
   };
 
@@ -113,7 +115,17 @@ const CameraApp = ({ className }) => {
   return (
     <>
       {result.image ? (
-        <InfoBarang className="animate__animated animate__slideInUp"/>
+        <>
+          <InfoBarang className="animate__animated animate__slideInUp" />
+          <div className="flex gap-3 w-full z-10">
+            <button className="px-3 py-4 bg-orange-400 rounded-lg w-full border-b-5 border-orange-600 active:border-b-3 active:translate-y-[0.5px]">
+              Tambah koleksi
+            </button>
+            <button className="px-3 py-4 rounded-lg border border-orange-600 w-full border-b-5 active:border-b-3 active:border-orange-600 active:translate-y-[0.5px]">
+              Foto barang lain
+            </button>
+          </div>
+        </>
       ) : (
         <>
           <div className="flex flex-col justify-center items-center">
@@ -130,24 +142,26 @@ const CameraApp = ({ className }) => {
             <div className="flex gap-3 absolute bottom-0 my-5">
               {!ableToCapture ? (
                 <button
-                  className="font-semibold px-3 py-4 bg-orange-400 rounded-lg w-full border-b-5 border-orange-600 active:border-b-3 active:translate-y-[0.5px]"
+                  className="font-semibold p-4 bg-orange-400 w-full border-b-5 border-orange-600 active:border-b-3 active:translate-y-[0.5px] rounded-full"
                   onClick={handleCapture}
                 >
-                  Foto
+                  <IconCapture />
                 </button>
               ) : (
                 <>
                   <button
-                    className="font-semibold px-3 py-4 bg-orange-400 rounded-lg w-full border-b-5 border-orange-600 active:border-b-3 active:translate-y-[0.5px]"
+                    className="flex gap-3 items-center font-semibold px-4 border text-orange-400 rounded-lg w-full border-b-5 border-orange-600 active:border-b-3 active:translate-y-[0.5px]"
                     onClick={resetCapture}
                   >
-                    Reset Foto
+                    <IconRefresh />
+                    <span>Ulang</span>
                   </button>
                   <button
-                    className="font-semibold px-3 py-4 bg-orange-400 rounded-lg w-full border-b-5 border-orange-600 active:border-b-3 active:translate-y-[0.5px]"
+                    className="flex gap-3 items-center font-semibold p-4 bg-orange-400 rounded-lg w-full border-b-5 border-orange-600 active:border-b-3 active:translate-y-[0.5px]"
                     onClick={detectCapture}
                   >
-                    Deteksi
+                    <IconZoomScan />
+                    <span>Deteksi</span>
                   </button>
                 </>
               )}

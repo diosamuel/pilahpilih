@@ -14,12 +14,7 @@ function InfoBarang({ className }) {
       <img src={bottle} className="w-32" />
       <h1 className="text-lg -mb-4">Kamu Menemukan</h1>
       <h1 className="text-xl font-bold">Botol Plastik!</h1>
-      <p>
-        Tutup botol plastik adalah komponen penting yang terbuat dari bahan
-        plastik, berfungsi untuk menutup rapat botol, mencegah tumpahan cairan,
-        menghindari kontaminasi dari luar, menjaga kesegaran isi, dan memudahkan
-        akses pengguna.
-      </p>
+      <p>Botol plastik adalah wadah yang sangat umum digunakan untuk mengemas minuman seperti air minum, minuman ringan, jus, dan lainnya. Proses pembuatan botol plastik melibatkan penggunaan berbagai jenis bahan plastik, masing-masing dengan karakteristik, keamanan, dan dampak lingkungan yang berbeda. Artikel ini akan menjelaskan berbagai jenis bahan yang digunakan dalam pembuatan botol plastik untuk minuman, membahas keamanan penggunaannya, serta dampak lingkungan yang terkait.</p>
 
       <div className="text-center w-full space-y-5 z-10">
         <h3 className="text-lg font-semibold">Informasi</h3>
@@ -30,7 +25,7 @@ function InfoBarang({ className }) {
           </div>
           <div className="flex flex-col justify-center items-center p-5">
             <IconRecycle />
-            <h3>Dapat Didaur Ulang</h3>
+            <h3>Aman dalam jangka waktu tertentu</h3>
           </div>
         </div>
         <h1 className="p-3 flex items-center justify-center gap-3 bg-purple-200 rounded border-t-4 rounded border-t-purple-500 text-sm">
@@ -43,15 +38,6 @@ function InfoBarang({ className }) {
         <h3 className="text-left">
           Lihat Karya-karya dari <strong>Botol Plastik</strong>
         </h3>
-      </div>
-
-      <div className="flex gap-3 w-full z-10">
-        <button className="px-3 py-4 bg-orange-400 rounded-lg w-full border-b-5 border-orange-600 active:border-b-3 active:translate-y-[0.5px]">
-          Tambah koleksi
-        </button>
-        <button className="px-3 py-4 rounded-lg border border-orange-600 w-full border-b-5 active:border-b-3 active:border-orange-600 active:translate-y-[0.5px]">
-          Foto barang lain
-        </button>
       </div>
 
       {/*<div className="fixed -bottom-72 transform w-[40em]">
